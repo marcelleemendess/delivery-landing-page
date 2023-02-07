@@ -1,9 +1,9 @@
-/* Google fonts*/
+/*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-/* variables css */
+/*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3rem;
-  /* colors */
+  /*========== Colors ==========*/
   --hue: 45;
   --sat: 98%;
   --first-color: hsl(var(--hue), var(--sat), 60%);
@@ -14,36 +14,34 @@
   --text-color: hsl(var(--hue), 4%, 35%);
   --text-color-light: hsl(var(--hue), 4%, 65%);
   --body-color: hsl(var(--hue), 0%, 100%);
-  --container-color: #FFF ;
+  --container-color: #FFF;
   --scroll-bar-color: hsl(var(--hue), 4%, 85%);
   --scroll-thumb-color: hsl(var(--hue), 4%, 75%);
-  /* Font and Typography */
-  --body-font: 'Poppins', sans-serif;
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
   --biggest-font-size: 2rem;
-  --h2-font-size: 1.25rem ;
+  --h2-font-size: 1.25rem;
   --h3-font-size: 1.125rem;
   --normal-font-size: .938rem;
   --small-font-size: .813rem;
   --smaller-font-size: .75rem;
-  /* Responsive typography */
-  /* Font Weight */
+  /*========== Font weight ==========*/
   --font-semi-bold: 600;
   --font-bold: 700;
-  /* Margenes  */
+  /*========== Margenes ==========*/
   --mb-0-5: .5rem;
   --mb-0-75: .75rem;
   --mb-1: 1rem;
   --mb-1-5: 1.5rem;
   --mb-2: 2rem;
-  /* z index  */
-  --z-toolpip: 10;
+  /*========== z index ==========*/
+  --z-tooltip: 10;
   --z-fixed: 100;
 }
-
 @media screen and (min-width: 968px) {
   :root {
     --biggest-font-size: 3rem;
-    --h2-font-size: 1.75rem ;
+    --h2-font-size: 1.75rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
     --small-font-size: .875rem;
@@ -52,9 +50,10 @@
 }
 
 /*-------- BASE ----------*/
-*, ::before, ::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+*,
+::before,
+::after {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -66,16 +65,62 @@ html {
 body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
-  font-size: var(--normal-fontsize);
+  font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
 }
 
-/* Reusable css classes */
+h1,
+h2,
+h3 {
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== THEME ===============*/
+/*========== Variables Dark theme ==========*/
+body.dark-theme {
+  --first-color-light: hsl(var(--hue), var(--sat), 75%);
+  --title-color: hsl(var(--hue), 4%, 95%);
+  --text-color: hsl(var(--hue), 4%, 80%);
+  --body-color: hsl(var(--hue), 8%, 13%);
+  --container-color: hsl(var(--hue), 8%, 16%);
+  --scroll-bar-color: hsl(var(--hue), 4%, 32%);
+  --scroll-thumb-color: hsl(var(--hue), 4%, 24%);
+}
+
+/*========== Button Dark/Light ==========*/
+.change-theme {
+  position: absolute;
+  right: 1.5rem;
+  top: 2.2rem;
+  color: var(--title-color);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.dark-theme .footer {
+  background-color: var(--container-color);
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
 .section {
   padding: 4.5rem 0 1rem;
 }
-
 .section__title, .section__title-center {
   font-size: var(--h2-font-size);
   color: var(--title-color);
@@ -86,18 +131,15 @@ body {
 .svg__color {
   fill: var(--first-color);
 }
-
 .svg__blob {
   fill: var(--first-color-light);
 }
-
 .svg__img {
   width: 300px;
-  -ms-grid-column-align: center;
-      justify-self: center;
+  justify-self: center;
 }
 
-/* Layout */
+/*=============== LAYOUT ===============*/
 .container {
   max-width: 968px;
   margin-left: var(--mb-1-5);
@@ -105,8 +147,41 @@ body {
 }
 
 .grid {
-  display: -ms-grid;
   display: grid;
   gap: 1.5rem;
 }
+
+/*-----Header---------*/
+.header {
+  width: 100%;
+  background-color: var(--body-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  transition: 0.5s;
+}
+
+/*-----Nav---------*/
+/*--------Show Menu ---------*/
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    background-color: var(--container-color);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Change background header */
+/*--------Buttons--------*/
+.button__header {
+  display: none;
+}
+
 /*# sourceMappingURL=styles.css.map */
