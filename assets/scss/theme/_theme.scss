@@ -1,5 +1,6 @@
-/*=============== THEME ===============*/
-/*========== Variables Dark theme ==========*/
+/*----------Theme-----------*/
+
+/*--------Variables dark theme---------*/
 body.dark-theme {
   --first-color-light: hsl(var(--hue), var(--sat), 75%);
   --title-color: hsl(var(--hue), 4%, 95%);
@@ -9,8 +10,7 @@ body.dark-theme {
   --scroll-bar-color: hsl(var(--hue), 4%, 32%);
   --scroll-thumb-color: hsl(var(--hue), 4%, 24%);
 }
-
-/*========== Button Dark/Light ==========*/
+/*--------Button Dark/Light---------*/
 .change-theme {
   position: absolute;
   right: 1.5rem;
